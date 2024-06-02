@@ -7,7 +7,7 @@
 
 <style>
 	p {
-		width: 80vw;
+		max-width: 60vw;
 		margin: 3rem;
 	}
 </style>

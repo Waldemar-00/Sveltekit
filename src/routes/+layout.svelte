@@ -35,4 +35,9 @@
 	:global(li) {
 		list-style: none;
 	}
+	ul {
+		display: flex;
+		justify-content: flex-start;
+		gap: calc(1rem + 2vmin);
+	}
 </style>
