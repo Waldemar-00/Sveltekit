@@ -40,4 +40,9 @@
 		justify-content: flex-start;
 		gap: calc(1rem + 2vmin);
 	}
+	:global(h1, p) {
+		width: 90vw;
+		margin: 2rem auto;
+		text-align: center;
+	}
 </style>
