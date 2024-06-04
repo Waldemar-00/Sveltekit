@@ -26,4 +26,6 @@
 		gap: 1.5rem;
 		/* width: fit-content; */
 	}
+	h1 {
+	}
 </style>
