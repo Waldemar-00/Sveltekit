@@ -4,6 +4,7 @@
 		<li><a href="/other"><h2>Other</h2></a></li>
 		<li><a href="/about"><h2>About</h2></a></li>
 		<li><a href="/blogs"><h2>Blogs</h2></a></li>
+		<li><a href="/cookies"><h2>Cookies</h2></a></li>
 	</ul>
 </nav>
 <slot></slot>
