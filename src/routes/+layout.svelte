@@ -5,6 +5,7 @@
 		<li><a href="/about"><h2>About</h2></a></li>
 		<li><a href="/blogs"><h2>Blogs</h2></a></li>
 		<li><a href="/cookies"><h2>Cookies</h2></a></li>
+		<li><a href="/form"><h2>Form</h2></a></li>
 	</ul>
 </nav>
 <slot></slot>
@@ -45,5 +46,8 @@
 		width: 90vw;
 		margin: 2rem auto;
 		text-align: center;
+	}
+	:global(h1) {
+		color: #551a8b;
 	}
 </style>
