@@ -7,12 +7,12 @@
 <h1>form for todo</h1>
 <main>
 	<form method="POST">
-		<input type="text" autocomplete="off" name="addTodo" />
+		<input type="text" autocomplete="off" name="inputValue" />
 	</form>
 	<hr />
 	<ul>
 		{#each data.todos as t, index (index)}
-			<li>{index + 1}. {t.addTodo}</li>
+			<li>{index + 1}. {t.inputValue}</li>
 		{/each}
 	</ul>
 </main>

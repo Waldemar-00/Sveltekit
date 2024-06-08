@@ -12,7 +12,8 @@ export function load ( { cookies } ) {
 }
 export const actions = {
 	default: async ( { cookies, request } ) => {
-		const response = await request.formData();
-		db.createTodo(cookies.get('userid'), response.get('addTodo'));
+		const inputValue = ( await request.formData() ).get( 'inputValue' );
+		const userid = cookies.get( 'userid' );
+		db.createTodo(userid, inputValue);
 	}
 };

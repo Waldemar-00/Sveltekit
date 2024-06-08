@@ -8,7 +8,7 @@ export function createDefaultTodo (userid) {
       [
         {
         id: v4(),
-        addTodo: 'Learn Sveltekit',
+        inputValue: 'Learn Sveltekit',
         done: false
         },
       ]
@@ -16,11 +16,11 @@ export function createDefaultTodo (userid) {
   }
   return mapTodos.get(userid)
 }
-export function createTodo ( userid, addTodo ) {
-  const userTodos = mapTodos.get( userid );
-  userTodos.push( {
+export function createTodo ( userid, inputValue ) {
+  const arrayOfUserTodos = mapTodos.get( userid );
+  arrayOfUserTodos.push( {
     id: v4(),
-    addTodo,
+    inputValue,
     done: false
   } );
 }
