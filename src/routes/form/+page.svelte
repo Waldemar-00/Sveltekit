@@ -6,13 +6,22 @@
 
 <h1>form for todo</h1>
 <main>
-	<form method="POST">
-		<input type="text" autocomplete="off" name="inputValue" />
+	<form method="POST" action="?/create">
+		<!-- svelte-ignore a11y-autofocus -->
+		<input type="text" autocomplete="off" name="inputValue" autofocus />
 	</form>
 	<hr />
 	<ul>
-		{#each data.todos as t, index (index)}
-			<li>{index + 1}. {t.inputValue}</li>
+		{#each data.todos as t, index (t.id)}
+			<li>
+				<form method="POST" action="?/delete">
+					<input type="hidden" name="id" value={t.id} />
+					<div class="del">
+						<span>{index + 1}. {t.inputValue}</span>
+						<button aria-label="Mark as complete">delete</button>
+					</div>
+				</form>
+			</li>
 		{/each}
 	</ul>
 </main>
@@ -33,8 +42,8 @@
 		outline-color: grey;
 	}
 	hr {
-		width: 50vmin;
-		transform: translateX(-30%);
+		width: 60vmin;
+		transform: translateX(-16%);
 	}
 	ul {
 		align-self: flex-start;
@@ -47,5 +56,23 @@
 		list-style: none;
 		font-size: 1.3rem;
 		width: fit-content;
+	}
+	.del {
+		width: 60vmin;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	button {
+		border: none;
+		opacity: 0.5;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.2s;
+		padding: 0.5rem 0.8rem;
+	}
+	button:hover {
+		opacity: 1;
+		background-color: #eee;
 	}
 </style>

@@ -11,9 +11,23 @@ export function load ( { cookies } ) {
 	};
 }
 export const actions = {
-	default: async ( { cookies, request } ) => {
+	create: async ( { cookies, request } ) => {
 		const inputValue = ( await request.formData() ).get( 'inputValue' );
 		const userid = cookies.get( 'userid' );
 		db.createTodo(userid, inputValue);
+	},
+	delete: async ( { cookies, request } ) => {
+		const id = ( await request.formData() ).get( 'id' );
+		const userid = cookies.get( 'userid' );
+		db.deleteTodo(userid, id);
 	}
 };
+
+
+//! export const actions = {
+//! 	default: async ( { cookies, request } ) => {
+//! 		const inputValue = ( await request.formData() ).get( 'inputValue' );
+//! 		const userid = cookies.get( 'userid' );
+//! 		db.createTodo(userid, inputValue);
+//! 	}
+//! };

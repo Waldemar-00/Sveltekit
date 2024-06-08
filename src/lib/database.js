@@ -24,3 +24,11 @@ export function createTodo ( userid, inputValue ) {
     done: false
   } );
 }
+
+export function deleteTodo ( userid, id ) {
+  const userTodos = mapTodos.get( userid );
+  const index = userTodos.findIndex( t => t.id === id );
+  if ( index !== -1 ) {
+    userTodos.splice( index, 1 );
+  }
+}
