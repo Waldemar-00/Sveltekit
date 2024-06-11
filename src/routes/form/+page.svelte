@@ -1,9 +1,14 @@
 <script>
 	// @ts-nocheck
+	import { enhance } from '$app/forms';
+	import { update } from 'firebase/database';
+	import { fly, slide } from 'svelte/transition';
 	export let data; // It's object from function load from server.js
 	export let form; //! It's data from function fail (@svelte/kit). It return null or object with error
-	console.log(data);
-	console.log(form);
+	let creating = false;
+	let deleting = [];
+	// console.log(data);
+	// console.log(form);
 </script>
 
 <!--the variable form may be contains null if not caught errors-->
@@ -12,9 +17,23 @@
 {/if}
 <h1>form for todo</h1>
 <main>
-	<form method="POST" action="?/create">
+	<form
+		method="POST"
+		action="?/create"
+		use:enhance={() => {
+			creating = true;
+			return async ({ update }) => {
+				await update();
+				creating = false;
+			};
+		}}
+	>
+		<label for="todo">{!creating ? 'create' : 'upload...'}</label>
 		<!-- svelte-ignore a11y-autofocus -->
 		<input
+			id="todo"
+			disabled={creating}
+			required
 			type="text"
 			autocomplete="off"
 			name="inputValue"
@@ -24,9 +43,19 @@
 	</form>
 	<hr />
 	<ul>
-		{#each data.todos as t, index (t.id)}
-			<li>
-				<form method="POST" action="?/delete">
+		{#each data.todos.filter((t) => !deleting.includes(t.id)) as t, index (t.id)}
+			<li in:fly={{ y: 20 }} out:fly={{ x: 40 }}>
+				<form
+					method="POST"
+					action="?/delete"
+					use:enhance={() => {
+						deleting = [...deleting, t.id];
+						return async ({ update }) => {
+							await update();
+							deleting = deleting.filter((id) => id !== t.id);
+						};
+					}}
+				>
 					<input type="hidden" name="id" value={t.id} />
 					<div class="del">
 						<span>{index + 1}. {t.inputValue}</span>
@@ -49,6 +78,10 @@
 		gap: 1rem;
 		width: 80vmin;
 		margin: 2rem auto;
+	}
+	label {
+		height: 1.2rem;
+		transition: all 0.2s;
 	}
 	input {
 		width: 80vmin;
