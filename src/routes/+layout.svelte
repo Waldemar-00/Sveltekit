@@ -6,6 +6,7 @@
 		<li><a href="/blogs"><h2>Blogs</h2></a></li>
 		<li><a href="/cookies"><h2>Cookies</h2></a></li>
 		<li><a href="/form"><h2>Form</h2></a></li>
+		<li><a href="/login"><h2>Login</h2></a></li>
 	</ul>
 </nav>
 <slot></slot>

@@ -17,8 +17,14 @@ export function createDefaultTodo (userid) {
   return mapTodos.get(userid)
 }
 export function createTodo ( userid, inputValue ) {
-  const arrayOfUserTodos = mapTodos.get( userid );
-  arrayOfUserTodos.push( {
+  if ( inputValue === '' ) {
+    throw new Error('Please enter todo description')
+  }
+  const userTodos = mapTodos.get( userid );
+  if ( userTodos.find( t => t.inputValue === inputValue )) {
+    throw new Error('Descriptions must be unique')
+  }
+  mapTodos.get( userid ).push( {
     id: v4(),
     inputValue,
     done: false

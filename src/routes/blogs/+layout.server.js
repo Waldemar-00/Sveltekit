@@ -6,7 +6,7 @@ export const prerender = true;
 //! if both ssr and csr are false - nothing will be rendered
 export function load () {
   return {
-    summaries: posts.map( ( post ) => ({
+    all: posts.map( ( post ) => ({
       slug: post.slug,
       title: post.title,
     }))

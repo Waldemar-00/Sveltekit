@@ -10,7 +10,7 @@
 	<aside>
 		<h2>All blogs</h2>
 		<ul>
-			{#each data.summaries as { slug }}
+			{#each data.all as { slug }}
 				<li><a href="/blogs/{slug}"><h2>{slug.toUpperCase()}</h2></a></li>
 			{/each}
 		</ul>
