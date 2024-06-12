@@ -1,7 +1,6 @@
 <script>
 	// @ts-nocheck
 	import { enhance } from '$app/forms';
-	import { update } from 'firebase/database';
 	import { fly, slide } from 'svelte/transition';
 	export let data; // It's object from function load from server.js
 	export let form; //! It's data from function fail (@svelte/kit). It return null or object with error
