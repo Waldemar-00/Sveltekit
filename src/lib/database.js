@@ -24,11 +24,15 @@ export function createTodo ( userid, inputValue ) {
   if ( userTodos.find( t => t.inputValue === inputValue )) {
     throw new Error('Descriptions must be unique')
   }
+  const id = v4();
   mapTodos.get( userid ).push( {
-    id: v4(),
+    id,
     inputValue,
     done: false
   } );
+  return {
+    id
+  }
 }
 
 export function deleteTodo ( userid, id ) {
@@ -37,4 +41,13 @@ export function deleteTodo ( userid, id ) {
   if ( index !== -1 ) {
     userTodos.splice( index, 1 );
   }
+}
+
+export function putTodo (userid, id) {
+  const userTodos = mapTodos.get( userid );
+  userTodos.forEach( t => {
+    if ( t.id === id ) {
+      t.done = !t.done;
+    }
+  });
 }

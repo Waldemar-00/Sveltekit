@@ -1,3 +1,9 @@
+<script>
+	// @ts-nocheck
+
+	import { navigating } from '$app/stores';
+</script>
+
 <nav>
 	<ul class="header">
 		<li><a href="/"><h2>Home</h2></a></li>
@@ -5,9 +11,16 @@
 		<li><a href="/about"><h2>About</h2></a></li>
 		<li><a href="/blogs"><h2>Blogs</h2></a></li>
 		<li><a href="/cookies"><h2>Cookies</h2></a></li>
-		<li><a href="/form"><h2>Form</h2></a></li>
+		<li><a href="/todo"><h2>Todo</h2></a></li>
 		<li><a href="/login"><h2>Login</h2></a></li>
 		<li><a href="/dice"><h2>Dice</h2></a></li>
+		<li><a href="/notes"><h2>Notes</h2></a></li>
+		<li><a href="/stores"><h2>Stores</h2></a></li>
+		<li>
+			{#if $navigating}
+				navigate to {$navigating.to.url.pathname}
+			{/if}
+		</li>
 	</ul>
 </nav>
 <slot></slot>
@@ -43,6 +56,8 @@
 		display: flex;
 		justify-content: flex-start;
 		gap: calc(1rem + 2vmin);
+		color: #551a8b;
+		font-size: 1.2rem;
 	}
 	:global(h1, p) {
 		width: 90vw;

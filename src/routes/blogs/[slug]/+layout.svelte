@@ -5,7 +5,7 @@
 
 <article>
 	<main>
-		<slot><i>(article)</i></slot>
+		<slot></slot>
 	</main>
 	<aside>
 		<h2>All blogs</h2>
@@ -25,7 +25,5 @@
 		justify-content: space-between;
 		gap: 1.5rem;
 		/* width: fit-content; */
-	}
-	h1 {
 	}
 </style>
