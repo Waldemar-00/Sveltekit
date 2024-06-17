@@ -16,6 +16,8 @@
 		<li><a href="/dice"><h2>Dice</h2></a></li>
 		<li><a href="/notes"><h2>Notes</h2></a></li>
 		<li><a href="/stores"><h2>Stores</h2></a></li>
+		<li><a href="/error"><h2>Errors</h2></a></li>
+		<li><a href="/redirect"><h2>Redirect</h2></a></li>
 		<li>
 			{#if $navigating}
 				navigate to {$navigating.to.url.pathname}
