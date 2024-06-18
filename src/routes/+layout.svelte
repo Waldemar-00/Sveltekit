@@ -18,6 +18,7 @@
 		<li><a href="/stores"><h2>Stores</h2></a></li>
 		<li><a href="/error"><h2>Errors</h2></a></li>
 		<li><a href="/redirect"><h2>Redirect</h2></a></li>
+		<li><a href="/hooks"><h2>Hooks</h2></a></li>
 		<li>
 			{#if $navigating}
 				navigate to {$navigating.to.url.pathname}
@@ -26,6 +27,10 @@
 	</ul>
 </nav>
 <slot></slot>
+<p>
+	Hot pink color from the handle function and from property transformPageChunck! Placed in body of
+	the page!
+</p>
 
 <style>
 	:global(body) {
