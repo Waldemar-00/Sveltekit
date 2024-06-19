@@ -8,3 +8,12 @@ export async function handle({ event, resolve }) {
 		)
 	});
 }
+
+export async function handleFetch ( { event, request, fetch } ) {
+	const url = new URL( request.url );
+	if ( url.pathname === '/alfa' ) {
+		return await fetch('/beta')
+	}
+	console.log(event, 'EVENT');
+	return await fetch(request)
+}

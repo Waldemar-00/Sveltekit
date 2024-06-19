@@ -4,13 +4,23 @@
 
 <h1>Welcome to SvelteKit</h1>
 <a href="/redirect/fake">Fake page</a>
-<h2>{data.message}</h2>
+<div class="loads">
+	<h2>{data.message}</h2>
+	<h2>{data.text}</h2>
+</div>
 
 <style>
 	a {
 		display: block;
 		width: 40vmin;
 		text-align: center;
+		margin: 2rem auto;
+	}
+	.loads {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80vmin;
 		margin: 2rem auto;
 	}
 </style>
