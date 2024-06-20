@@ -5,7 +5,7 @@
 </script>
 
 <nav>
-	<ul class="header">
+	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
 		<li><a href="/other"><h2>Other</h2></a></li>
 		<li><a href="/about"><h2>About</h2></a></li>
@@ -21,6 +21,7 @@
 		<li><a href="/hooks"><h2>Hooks</h2></a></li>
 		<li><a href="/alfa"><h2>Alfa</h2></a></li>
 		<li><a href="/beta"><h2>Beta</h2></a></li>
+		<li><a href="/ssr"><h2>SSR</h2></a></li>
 		<li>
 			{#if $navigating}
 				navigate to {$navigating.to.url.pathname}
@@ -29,16 +30,12 @@
 	</ul>
 </nav>
 <slot></slot>
-<p>
-	Hot pink color from the handle function and from property transformPageChunck! Placed in body of
-	the page!
-</p>
 
 <style>
 	:global(body) {
 		margin: 0;
 	}
-	:global(.header) {
+	:global(.navigate) {
 		display: flex;
 		gap: 3rem;
 		align-items: center;
@@ -66,7 +63,7 @@
 		justify-content: flex-start;
 		gap: calc(1rem + 2vmin);
 		color: #551a8b;
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 	:global(h1, p) {
 		width: 90vw;

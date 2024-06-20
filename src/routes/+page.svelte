@@ -8,6 +8,10 @@
 	<h2>{data.message}</h2>
 	<h2>{data.text}</h2>
 </div>
+<p>
+	Hot pink color from the handle function and from property transformPageChunck! Placed in body of
+	the page!
+</p>
 
 <style>
 	a {

@@ -9,11 +9,18 @@ export async function handle({ event, resolve }) {
 	});
 }
 
-export async function handleFetch ( { event, request, fetch } ) {
+export async function handleFetch ( { request, fetch } ) {
 	const url = new URL( request.url );
 	if ( url.pathname === '/alfa' ) {
 		return await fetch('/beta')
 	}
-	console.log(event, 'EVENT');
 	return await fetch(request)
+}
+
+export async function handleError ( { error } ) {
+	console.error(error.stack, 'error.stack');
+	return {
+		message: 'My message in object',
+		code: 'No any code because it is my error'
+	}
 }
