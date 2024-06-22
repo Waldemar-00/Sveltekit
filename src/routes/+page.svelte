@@ -1,12 +1,13 @@
 <script>
 	export let data;
+	console.log(data, 'TEXT');
 </script>
 
 <h1>Welcome to SvelteKit</h1>
 <a href="/redirect/fake">Fake page</a>
 <div class="loads">
 	<h2>{data.message}</h2>
-	<h2>{data.text}</h2>
+	<h2>{data.textA}</h2>
 </div>
 <p>
 	Hot pink color from the handle function and from property transformPageChunck! Placed in body of

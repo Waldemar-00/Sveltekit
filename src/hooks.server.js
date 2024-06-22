@@ -9,13 +9,13 @@ export async function handle({ event, resolve }) {
 	});
 }
 
-export async function handleFetch ( { request, fetch } ) {
-	const url = new URL( request.url );
-	if ( url.pathname === '/alfa' ) {
-		return await fetch('/beta')
-	}
-	return await fetch(request)
-}
+// export async function handleFetch ( { request, fetch } ) {
+// 	const url = new URL( request.url );
+// 	if ( url.pathname === '/alfa' ) {
+// 		return await fetch('/beta')
+// 	}
+// 	return await fetch(request)
+// }
 
 export async function handleError ( { error } ) {
 	console.error(error.stack, 'error.stack');

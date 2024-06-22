@@ -1,4 +1,4 @@
 // @ts-nocheck
 export function GET () {
-  return new Promise( 'Page ALFA' );
+  return new Response('Page ALFA');
 }

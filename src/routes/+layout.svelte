@@ -7,6 +7,7 @@
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><a href="/preload"><h2>Preload</h2></a></li>
 		<li><a href="/other"><h2>Other</h2></a></li>
 		<li><a href="/about"><h2>About</h2></a></li>
 		<li><a href="/blogs"><h2>Blogs</h2></a></li>
@@ -37,14 +38,17 @@
 	}
 	:global(.navigate) {
 		display: flex;
-		gap: 3rem;
-		align-items: center;
-		height: calc(1rem + 4vmin);
-		width: 90vw;
-		margin: 0 auto;
-		padding: 1rem 2rem;
+		flex-direction: column;
+		gap: 0.5rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: fit-content;
+		width: 11vw;
+		margin-left: 1rem;
 		background-color: aquamarine;
-		border-radius: 0 0px 50px 50px;
+		border-radius: 10px;
+		padding: 1rem 0.7rem;
 	}
 	:global(.block) {
 		display: flex;
@@ -52,11 +56,13 @@
 		width: 90vw;
 		margin: 0 auto;
 	}
-	:global(.header a) {
+	:global(.navigate a) {
 		text-decoration: none;
 	}
 	:global(li) {
 		list-style: none;
+		margin: 0;
+		padding: 0;
 	}
 	ul {
 		display: flex;
@@ -72,5 +78,9 @@
 	}
 	:global(h1) {
 		color: #551a8b;
+	}
+	h2 {
+		margin: 0;
+		padding: 0;
 	}
 </style>
