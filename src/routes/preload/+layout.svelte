@@ -2,9 +2,9 @@
 	// @ts-nocheck
 
 	import { navigating } from '$app/stores';
-	let prevNav;
-	let start;
-	let end;
+	import { onMount } from 'svelte';
+	let prevNav, start, end;
+	let seconds = 0;
 	$: if ($navigating) {
 		start = Date.now();
 		prevNav = $navigating;
@@ -12,11 +12,17 @@
 	} else {
 		end = Date.now();
 	}
+	onMount(() => {
+		const timer = setInterval(() => (seconds = seconds + 1), 1000);
+		return () => {
+			clearInterval(timer);
+		};
+	});
 </script>
 
 <slot></slot>
 <nav>
-	<ul>
+	<ul data-sveltekit-reload>
 		<li><a href="/preload">Preload</a></li>
 		<li><a href="/preload/fast">Fast</a></li>
 		<li><a href="/preload/slow">Slow</a></li>
@@ -29,6 +35,7 @@
 		<strong>{end - start}ms</strong>
 	</p>
 {/if}
+<p>This page was opened <strong>{seconds}</strong> seconds ago</p>
 
 <style>
 	nav {
