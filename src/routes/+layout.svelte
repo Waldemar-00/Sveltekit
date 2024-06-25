@@ -7,6 +7,7 @@
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><a href="/rest"><h2>Rest</h2></a></li>
 		<li><a href="/langs"><h2>Langs</h2></a></li>
 		<li><a href="/preload"><h2>Preload</h2></a></li>
 		<li><a href="/other"><h2>Other</h2></a></li>

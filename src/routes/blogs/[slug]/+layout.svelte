@@ -19,7 +19,7 @@
 
 <style>
 	article {
-		margin: calc(1rem + 2vmin) 10vmin;
+		margin: calc(1rem + 2vmin) 15vw;
 		padding: 1rem;
 		display: flex;
 		justify-content: space-between;
