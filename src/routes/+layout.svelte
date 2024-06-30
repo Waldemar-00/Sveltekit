@@ -7,6 +7,8 @@
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><a href="/universal"><h2>Universal</h2></a></li>
+		<li><a href="layouts"><h2>Layouts</h2></a></li>
 		<li><a href="groups"><h2>Groups</h2></a></li>
 		<li><a href="/match"><h2>Match</h2></a></li>
 		<li><a href="/rest"><h2>Rest</h2></a></li>
