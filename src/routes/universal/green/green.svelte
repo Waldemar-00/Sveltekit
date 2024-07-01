@@ -1,1 +1,7 @@
-<marquee>hello from green.svelte</marquee>
+<marquee data-component>hello from green.svelte</marquee>
+
+<style>
+	[data-component] {
+		width: 60vw;
+	}
+</style>
