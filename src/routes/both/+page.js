@@ -1,9 +1,9 @@
 // @ts-nocheck
 export async function load ({data})
 {
-  console.log(data);
+  // console.log(data);
   const module = data.cool ? await import( './cool.svelte' ) : await import( './boring.svelte' );
-  console.log(module);
+  // console.log(module);
 
   return {
     component: module.default,
