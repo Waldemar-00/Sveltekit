@@ -1,10 +1,9 @@
-export async function load ({fetch, params})
+export async function load ({depends})
 {
-  const response = await fetch( '/timezone/api/now' );
-  const now = await response.json();
-  console.log(now, 'NOW', params.timezone);
-
+  // const response = await fetch( '/timezone/api/now' );
+  // const now = await response.json();
+  depends('data:now')
   return {
-    now
+    now: Date.now()
   }
 }

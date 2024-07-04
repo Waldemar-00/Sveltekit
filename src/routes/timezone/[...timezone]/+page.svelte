@@ -2,8 +2,11 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 	export let data;
+	// $: console.log(data, 'DATA');
+
 	onMount(() => {
-		const interval = setInterval(() => invalidate('/timezone/api/now'), 1000);
+		const interval = setInterval(() => invalidate('data:now'), 1000);
+		// '/timezone/api/now'
 		return () => {
 			clearInterval(interval);
 		};
