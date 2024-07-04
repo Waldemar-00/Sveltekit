@@ -7,6 +7,7 @@
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><a href="/timezone"><h2>Timezone</h2></a></li>
 		<li><a href="/parent"><h2>Parent</h2></a></li>
 		<li><a href="/both"><h2>Both</h2></a></li>
 		<li><a href="/universal"><h2>Universal</h2></a></li>
