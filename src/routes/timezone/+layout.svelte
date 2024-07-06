@@ -1,4 +1,8 @@
-<nav class="timezone">
+<script>
+	import { PUBLIC_BGC } from '$env/static/public';
+</script>
+
+<nav class="timezone" style="--background: {PUBLIC_BGC}">
 	<a href="/timezone/America/New_York">New York</a>
 	<a href="/timezone/America/Sao_Paulo">São Paulo</a>
 	<a href="/timezone/America/Los_Angeles">Los Angeles</a>
@@ -15,8 +19,11 @@
 	nav {
 		display: flex;
 		gap: 2rem;
-		width: 90vw;
+		width: 80vw;
 		margin: 1rem 15vw;
+		background-color: var(--background);
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
 	}
 	.timezone a,
 	.timezone a:hover,

@@ -1,6 +1,10 @@
+<script>
+	import { PUBLIC_BTN_BGC } from '$env/static/public';
+</script>
+
 <h1>You are logged in, Welcome!</h1>
 <form method="POST">
-	<button>Logout</button>
+	<button style="--bgc:{PUBLIC_BTN_BGC}">Logout</button>
 </form>
 
 <style>
@@ -15,7 +19,7 @@
 	button {
 		border: none;
 		border-radius: 0.5rem;
-		background-color: orangered;
+		background-color: var(--bgc);
 		color: white;
 		padding: 0.5rem 1rem;
 		font-size: 2rem;

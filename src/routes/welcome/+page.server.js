@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { redirect, fail } from '@sveltejs/kit'
-import { _PASS_PHRASE } from '$env/static/private';
+// import { PASS_PHRASE } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 export function load ( { cookies } )
 {
   if ( cookies.get( 'allowed' ) )
@@ -13,7 +14,8 @@ export const actions = {
   default: async ({cookies, request}) =>
   {
     const data = await request.formData();
-    if ( data.get('passphrase') === _PASS_PHRASE )
+    // if ( data.get('passphrase') === PASS_PHRASE )
+  if ( data.get('passphrase') === env.PASS_PHRASE )
     {
       cookies.set( 'allowed', 'true', { path: '/' } )
       throw redirect( 303, '/welcome/logged' )
