@@ -20,7 +20,7 @@ export async function handle({ event, resolve }) {
 export async function handleError ( { error } ) {
 	console.error(error.stack, 'error.stack');
 	return {
-		message: 'My message in object',
+		message: 'Message from handlerError',
 		code: 'No any code because it is my error'
 	}
 }

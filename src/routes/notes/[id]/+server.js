@@ -5,7 +5,13 @@ export function DELETE ( { params, cookies } ) {
   const userid = cookies.get( 'userid' );
   const id = params.id;
   db.deleteTodo( userid, id );
-  return new Response( null, { status: 204 } );
+  const responseBody = {
+    message: 'Notes deleted successfully'
+  }
+  return new Response( JSON.stringify( responseBody ), {
+    headers: { 'Content-Type': 'application/json'}, //! headers is optional here
+    status: 200
+  } );
 }
 export function PUT ( { cookies, params } ) {
   const userid = cookies.get( 'userid' );

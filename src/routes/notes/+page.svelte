@@ -2,7 +2,6 @@
 	// @ts-nocheck
 	import { fly } from 'svelte/transition';
 	export let data;
-	console.log(data);
 </script>
 
 <h1>form for todo</h1>
@@ -43,7 +42,7 @@
 							await fetch(`/notes/${t.id}`, {
 								method: 'PUT',
 								headers: {
-									'Content-Type': 'application/json'
+									'Content-Type': 'application/json' //! headers is optional here
 								},
 								body: JSON.stringify({ done })
 							});
@@ -54,8 +53,13 @@
 						aria-label="Mark as complete"
 						on:click={async () => {
 							await fetch(`/notes/${t.id}`, {
-								method: 'DELETE'
-							});
+								method: 'DELETE',
+								headers: {
+									'Content-Type': 'application/json'
+								}
+							})
+								.then((response) => response.json())
+								.then((data) => console.log(data.message));
 							data.notes = data.notes.filter((todo) => todo !== t);
 						}}>delete</button
 					>
@@ -118,16 +122,17 @@
 		background-color: #eee;
 	}
 	footer {
-		position: absolute;
-		left: 5vw;
+		position: fixed;
 		bottom: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 90vw;
+		text-align: center;
+		line-height: calc(1rem + 6vmin);
+		width: 70vw;
 		height: calc(1rem + 6vmin);
 		background-color: aqua;
-		border-radius: 50px 50px 0 0;
-		margin: 0 auto;
+		border-radius: 50px;
+		margin-left: 15vw;
+	}
+	footer a {
+		text-decoration: none;
 	}
 </style>

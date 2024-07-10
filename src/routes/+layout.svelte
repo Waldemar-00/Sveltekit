@@ -12,8 +12,8 @@
 		<li><a href="/parent"><h2>Parent</h2></a></li>
 		<li><a href="/both"><h2>Both</h2></a></li>
 		<li><a href="/universal"><h2>Universal</h2></a></li>
-		<li><a href="layouts"><h2>Layouts</h2></a></li>
-		<li><a href="groups"><h2>Groups</h2></a></li>
+		<li><a href="/layouts"><h2>Layouts</h2></a></li>
+		<li><a href="/groups"><h2>Groups</h2></a></li>
 		<li><a href="/match"><h2>Match</h2></a></li>
 		<li><a href="/rest"><h2>Rest</h2></a></li>
 		<li><a href="/langs"><h2>Langs</h2></a></li>
