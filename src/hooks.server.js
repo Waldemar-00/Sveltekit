@@ -1,6 +1,7 @@
 // @ts-nocheck
 export async function handle({ event, resolve }) {
-	event.locals.answer = '4212';
+	event.locals.information = 'This text contains in the event.locals[name]';
+	// if(event.url.pathname === '/') return new Response('Hello EVENT');
 	return await resolve(event, {
 		transformPageChunk: ({ html }) => html.replace(
 			'<body',

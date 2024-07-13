@@ -5,7 +5,6 @@ const greetings = {
   de: 'Hallo'
 }
 export function load ( { params } ) {
-  console.log(params.lang);
   return {
     lang: greetings[params.lang ?? 'en'],
   }

@@ -6,7 +6,7 @@
 
 <a href="/redirect/fake">Fake page</a>
 <div class="loads">
-	<h2>{data.message}</h2>
+	<h2 class="fromEvent">{data.fromEvent}</h2>
 	<h2>{data.textA}</h2>
 </div>
 
@@ -26,7 +26,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 80vmin;
 		margin: 2rem auto;
 	}
 </style>

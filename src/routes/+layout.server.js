@@ -4,7 +4,7 @@ export async function load ( { locals, fetch } ) {
   const responseB = await fetch( '/beta' );
   const textA = await responseA.text();
   return {
-    message: `The answer is ${ locals.answer }`,
+    fromEvent: `${locals.information}`,
     text: textA ,
     textA: textA,
     textB: await responseB.text()
