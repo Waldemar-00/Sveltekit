@@ -10,6 +10,7 @@ export async function handle({ event, resolve }) {
 	});
 }
 
+//! Here you can for example redirect request
 // export async function handleFetch ( { request, fetch } ) {
 // 	const url = new URL( request.url );
 // 	if ( url.pathname === '/alfa' ) {
@@ -19,9 +20,10 @@ export async function handle({ event, resolve }) {
 // }
 
 export async function handleError ( { error } ) {
-	console.error(error.stack, 'error.stack');
+	console.error(error.stack, 'error.stack'); //! will not be in the console for security reasons
 	return {
-		message: 'Message from handlerError',
-		code: 'No any code because it is my error'
+		message: 'Unexpected ERROR - message from the handlerError hook in the hook.server.js',
+		other: 'No any custom text or code'
+		//! you can get those properties from $page.error.someProperty
 	}
 }

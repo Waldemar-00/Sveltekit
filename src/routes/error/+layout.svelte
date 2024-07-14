@@ -1,5 +1,3 @@
-<slot></slot>
-
 <nav>
 	<ul>
 		<li><a href="/error">Error</a></li>
@@ -7,6 +5,7 @@
 		<li><a href="/error/unexpected">Unexpected error</a></li>
 	</ul>
 </nav>
+<slot></slot>
 
 <style>
 	nav {
