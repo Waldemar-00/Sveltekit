@@ -4,14 +4,19 @@
 	import { pushState } from '$app/navigation';
 	import { page } from '$app/stores';
 	function toggleModal(command) {
-		if (command === 'show') document.querySelector('dialog').showModal();
-		if (command === 'close') document.querySelector('dialog').close();
+		if (command === 'show') document.querySelector('dialog')?.showModal();
+		if (command === 'close') document.querySelector('dialog')?.close();
 	}
 
 	function show(bool) {
 		pushState('', {
 			showModal: bool
 		});
+	}
+	function catchKeydown(e) {
+		if (e.key === 'Enter') {
+			document.querySelector('#submit').click();
+		}
 	}
 </script>
 
@@ -27,7 +32,8 @@
 
 {#if $page.state.showModal}
 	<dialog>
-		<form method="POST">
+		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+		<form method="POST" on:keydown={catchKeydown}>
 			<button
 				class="close"
 				on:click={async () => {
@@ -38,7 +44,7 @@
 			<label for="email">email</label>
 			<!-- svelte-ignore a11y-autofocus -->
 			<input type="email" name="email" id="email" autofocus />
-			<button type="submit">submit</button>
+			<button type="submit" id="submit">submit</button>
 		</form>
 	</dialog>
 {/if}
@@ -99,8 +105,5 @@
 		font-size: 1.2em;
 		padding: 0.3rem;
 		margin: 2rem auto;
-	}
-	a {
-		color: white;
 	}
 </style>
