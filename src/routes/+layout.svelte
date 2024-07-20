@@ -47,6 +47,7 @@
 <style>
 	:global(body) {
 		margin: 0;
+		background-image: url('../assets/deer.jpg');
 	}
 	:global(.navigate) {
 		display: flex;

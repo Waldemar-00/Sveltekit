@@ -9,7 +9,7 @@
 	<h2 class="fromEvent">{data.fromEvent}</h2>
 	<h2>{data.textA}</h2>
 </div>
-
+<enhanced:img src="../assets/deer.jpg?blur=4" alt="Deer" />
 <p>
 	Hot pink color from the handle function and from property transformPageChunck! Placed in body of
 	the page!
