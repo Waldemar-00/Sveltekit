@@ -4,6 +4,10 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>main page of the Notes app</title>
+	<!--for SEO and accessibility-->
+</svelte:head>
 <h1>form for todo</h1>
 <main>
 	<!-- svelte-ignore a11y-autofocus -->
