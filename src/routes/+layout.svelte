@@ -2,6 +2,10 @@
 	// @ts-nocheck
 
 	import { navigating } from '$app/stores';
+	import { afterNavigate } from '$app/navigation';
+	afterNavigate(() => {
+		document.querySelector('[href="/error"]')?.focus();
+	});
 </script>
 
 <nav>
