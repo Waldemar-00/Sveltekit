@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<title>main page of the Notes app</title>
+	<meta name="description" content="This is where the description goes for SEO" />
 	<!--for SEO and accessibility-->
 </svelte:head>
 <h1>form for todo</h1>

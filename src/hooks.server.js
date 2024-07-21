@@ -7,6 +7,7 @@ export async function handle({ event, resolve }) {
 			'<body',
 			'<body style="color: white; font-size: 1.5rem; background-color: #F9F4F4"'
 		)
+		//! ?????????????? transformPageChunk: ( { html } ) => html.replace( '%lang%', get_lang( event ) )
 	});
 }
 
