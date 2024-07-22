@@ -3,14 +3,12 @@
 
 	import { navigating } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
-	afterNavigate(() => {
-		document.querySelector('[href="/error"]')?.focus();
-	});
 </script>
 
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><a href="/navigation"><h2>Navigation</h2></a></li>
 		<li><a href="/modal"><h2>Modal</h2></a></li>
 		<li><a href="/form"><h2>Form</h2></a></li>
 		<li><a href="/welcome"><h2>Welcome</h2></a></li>
