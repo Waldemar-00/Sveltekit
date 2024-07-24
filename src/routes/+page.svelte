@@ -1,8 +1,9 @@
 <script>
+	import { VERSION } from '@sveltejs/kit';
 	export let data;
 </script>
 
-<h1>Welcome to SvelteKit</h1>
+<h1>Welcome to SvelteKit: {VERSION}</h1>
 
 <a href="/redirect/fake">Fake page</a>
 <div class="loads">

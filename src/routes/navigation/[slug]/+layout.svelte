@@ -1,15 +1,15 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
-	import { beforeNavigate } from '$app/navigation';
+	// import { beforeNavigate } from '$app/navigation';
 	export let data;
 	afterNavigate(() => {
 		document.title = `${data.slug}`;
 	});
-	$: if (data.slug === 'BEFORE') {
-		beforeNavigate(({ cancel }) => {
-			cancel();
-		});
-	}
+	// $: if (data.slug === 'BEFORE') {
+	// 	beforeNavigate(({ cancel }) => {
+	// 		cancel();
+	// 	});
+	// }
 </script>
 
 <slot></slot>

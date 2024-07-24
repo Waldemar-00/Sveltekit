@@ -2,12 +2,22 @@
 	// @ts-nocheck
 
 	import { navigating } from '$app/stores';
-	import { afterNavigate } from '$app/navigation';
+	import { goto } from '$app/navigation';
+	async function goTo() {
+		await goto('/ssr', {
+			replaceState: false, //! the route in the history if the value is false
+			noScroll: true, //! how it work?
+			keepFocus: false, //! how it work?
+			invalidateAll: true, //! It calls all load functions
+			state: { message: 'Hello goto function' } //! it will work only after goto has worked, after reload state will be empty!
+		});
+	}
 </script>
 
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><button on:click={goTo}>Go to the SSR</button></li>
 		<li><a href="/navigation"><h2>Navigation</h2></a></li>
 		<li><a href="/modal"><h2>Modal</h2></a></li>
 		<li><a href="/form"><h2>Form</h2></a></li>
@@ -97,5 +107,13 @@
 	h2 {
 		margin: 0;
 		padding: 0;
+	}
+	button {
+		background: rgb(197, 63, 63);
+		color: #fff;
+		border: none;
+		border-radius: 1rem;
+		padding: 0.5rem 1rem;
+		font-weight: bold;
 	}
 </style>
