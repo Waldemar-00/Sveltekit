@@ -3,6 +3,10 @@
 
 	import { pushState } from '$app/navigation';
 	import { page } from '$app/stores';
+
+	//! export let data;
+	export let form;
+	$: console.log(form, 'FORM');
 	function toggleModal(command) {
 		if (command === 'show') document.querySelector('dialog')?.showModal();
 		if (command === 'close') document.querySelector('dialog')?.close();
@@ -18,10 +22,31 @@
 			document.querySelector('#submit').click();
 		}
 	}
+	// $: if (form?.missing) {
+	// 	console.log('MISSING');
+
+	// 	alert(`Check your email - ${form?.email}.\nIf it is wrong enter the email again!`);
+	// }
 </script>
 
 <h1>Modal pushState replaceState</h1>
-<h2>Both from '$app/navigation' and Modal from './Modal.svelte'</h2>
+<h2>
+	Both from '$app/navigation' and Modal from './Modal.svelte' <br />
+	<!-- {#if data.email}
+		Your email is {data.email}
+	{/if} -->
+
+	<!-- {#if form?.success}
+		Your email is {form?.success}
+	{/if} -->
+
+	{#if form?.success}
+		Is it your email - {form?.email}.
+	{/if}
+	{#if form?.missing}
+		'Check your email - {form?.email}.<br />If it is wrong enter the email again!'
+	{/if}
+</h2>
 <button
 	class="modal"
 	on:click={async () => {
@@ -43,7 +68,7 @@
 			>
 			<label for="email">email</label>
 			<!-- svelte-ignore a11y-autofocus -->
-			<input type="email" name="email" id="email" autofocus />
+			<input type="email" name="email" id="email" autofocus value={$page.form?.email || ''} />
 			<button type="submit" id="submit">submit</button>
 		</form>
 	</dialog>
@@ -94,6 +119,8 @@
 		width: 70vw;
 		margin: 2rem 15vw;
 		color: chocolate;
+		text-align: center;
+		line-height: 3rem;
 	}
 	button {
 		display: block;
