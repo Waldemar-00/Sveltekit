@@ -1,8 +1,12 @@
 <script>
+	// @ts-nocheck
+
 	import { PUBLIC_BTN_BGC } from '$env/static/public';
+	export let data;
 </script>
 
 <h1>You are logged in, Welcome!</h1>
+<h2>{data?.information}</h2>
 <form method="POST">
 	<button style="--bgc:{PUBLIC_BTN_BGC}">Logout</button>
 </form>
@@ -24,5 +28,8 @@
 		padding: 0.5rem 1rem;
 		font-size: 2rem;
 		margin-left: 2rem;
+	}
+	h2 {
+		text-align: center;
 	}
 </style>

@@ -1,3 +1,11 @@
+<script>
+	// @ts-nocheck
+
+	export let data;
+</script>
+
+<h1 style="color: white">{data?.information}</h1>
+
 <form method="POST">
 	<label>
 		Enter the passphrase

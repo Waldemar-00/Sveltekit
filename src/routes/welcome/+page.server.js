@@ -2,11 +2,15 @@
 import { redirect, fail } from '@sveltejs/kit'
 // import { PASS_PHRASE } from '$env/static/private';
 import { env } from '$env/dynamic/private';
-export function load ( { cookies } )
+export function load ( event )
 {
-  if ( cookies.get( 'allowed' ) )
+  if ( event.cookies.get( 'allowed' ) )
   {
     throw redirect(307, '/welcome/logged')
+  }
+  const message = event.locals.information = "The user hasn't logged in!"
+  return {
+    information: message
   }
 }
 
