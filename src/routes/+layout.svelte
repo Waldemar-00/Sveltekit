@@ -21,6 +21,7 @@
 		<li><a href="/navigation"><h2>Navigation</h2></a></li>
 		<li><a href="/modal"><h2>Modal</h2></a></li>
 		<li><a href="/form"><h2>Form</h2></a></li>
+		<li><a href="/formJS"><h2>FormJS</h2></a></li>
 		<li><a href="/welcome"><h2>Welcome</h2></a></li>
 		<li><a href="/timezone"><h2>Timezone</h2></a></li>
 		<li><a href="/parent"><h2>Parent</h2></a></li>
