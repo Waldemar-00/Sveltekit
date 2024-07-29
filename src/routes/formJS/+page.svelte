@@ -3,7 +3,7 @@
 	import { deserialize, applyAction } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
 	export let form;
-	console.log(form?.comment);
+	// console.log(form?.comment);
 
 	async function submitComment(e) {
 		const formData = new FormData(e.currentTarget);

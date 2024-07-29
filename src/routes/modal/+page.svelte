@@ -6,7 +6,7 @@
 
 	//! export let data;
 	export let form;
-	$: console.log(form, 'FORM');
+	// $: console.log(form, 'FORM');
 	function toggleModal(command) {
 		if (command === 'show') document.querySelector('dialog')?.showModal();
 		if (command === 'close') document.querySelector('dialog')?.close();

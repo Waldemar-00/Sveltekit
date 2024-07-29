@@ -1,5 +1,7 @@
 // @ts-nocheck
-export async function load ( { locals, fetch } ) {
+export const prerender = true;
+export async function load ( { locals, fetch } )
+{
   const responseA = await fetch( '/alfa' );
   const responseB = await fetch( '/beta' );
   const textA = await responseA.text();

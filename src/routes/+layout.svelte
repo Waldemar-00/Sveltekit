@@ -17,6 +17,7 @@
 <nav>
 	<ul class="navigate">
 		<li><a href="/"><h2>Home</h2></a></li>
+		<li><a href="/server_js"><h2>Server_JS</h2></a></li>
 		<li><button on:click={goTo}>Go to the SSR</button></li>
 		<li><a href="/navigation"><h2>Navigation</h2></a></li>
 		<li><a href="/modal"><h2>Modal</h2></a></li>

@@ -3,7 +3,7 @@ import { sequence } from '@sveltejs/kit/hooks';
 
 async function first ( { event, resolve } )
 {
-	console.log('EVENT', event, 'EVENT');
+	// console.log('EVENT', event, 'EVENT');
 
 	event.locals.information = 'This text contains in the event.locals[name]';
 	//! emergency method above
