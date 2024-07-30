@@ -61,3 +61,15 @@ export async function handleError ( { error } ) {
 		//! you can get those properties from $page.error.someProperty
 	}
 }
+
+export async function handleFetch ( { request, fetch } )
+{
+
+	if ( request.url.startsWith( 'http://localhost:5173/beta' ) )
+	{
+		// console.log("REQUEST", request, "REQUEST");
+		request = new Request( request.url.replace( 'http://localhost:5173/beta', 'http://localhost:5173/about' ), request );
+		// console.log("REQUEST", request, "REQUEST");
+	}
+	return fetch( request );
+}

@@ -8,7 +8,8 @@
 <a href="/redirect/fake">Fake page</a>
 <div class="loads">
 	<h2 class="fromEvent">{data.fromEvent || ''}</h2>
-	<h2>{data.textA}</h2>
+	<h2>{data.textA} TEXT A</h2>
+	<h2>{data.textB} TEXT B</h2>
 </div>
 <enhanced:img src="../assets/deer.jpg?blur=4" alt="Deer" />
 <p>
