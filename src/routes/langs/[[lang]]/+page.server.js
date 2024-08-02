@@ -4,7 +4,10 @@ const greetings = {
   fr: 'Bounjour',
   de: 'Hallo'
 }
-export function load ( { params } ) {
+export function load ( { params } )
+{
+  // console.log(params);
+
   return {
     lang: greetings[params.lang ?? 'en'],
   }

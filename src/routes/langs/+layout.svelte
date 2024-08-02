@@ -1,4 +1,3 @@
-<slot></slot>
 <nav>
 	<ul>
 		<li><a href="/langs">Default</a></li>
@@ -7,6 +6,7 @@
 		<li><a href="/langs/de">German</a></li>
 	</ul>
 </nav>
+<slot></slot>
 
 <style>
 	nav {
