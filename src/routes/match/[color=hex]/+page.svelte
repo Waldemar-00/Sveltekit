@@ -2,10 +2,11 @@
 	// @ts-nocheck
 
 	import { page } from '$app/stores';
+	// console.log($page, '$PAGE');
 </script>
 
-<div style="--color: #{$page.params.color}">
-	<span>#{$page.params.color}</span>
+<div style="--color: #{$page?.params?.color}">
+	<span>#{$page?.params?.color}</span>
 </div>
 
 <style>

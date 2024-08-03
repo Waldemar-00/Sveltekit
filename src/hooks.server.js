@@ -12,18 +12,18 @@ async function first ( { event, resolve } )
 				'<body',
 				'<body style="color: red; font-size: 1.5rem; background-color: #F9F4F4"'
 			),
-		preload: () => console.log('FIRST PRELOAD') //! how work it?
+		preload: () => console.log('FIRST PRELOAD') //! It is adding files in the <head> of the page
 	} )
 }
 async function second ( { event, resolve } )
 {
 	return await resolve( event, {
+		preload: () => console.log( 'SECOND PRELOAD' ), //! It is adding files in the <head> of the page
+		filterSerializedResponseHeaders: () => console.log( 'filterSerializedResponseHeaders' ), //! It defines what  headers will be included in the serialized responses when the load function is downloading resources with fetch. Default no one.
 		transformPageChunk: ( { html } ) => html.replace(
 				'<body',
 				'<body style="color: white; font-size: 1.5rem; background-color: #F9F4F4"'
 			),
-		preload: () => console.log( 'SECOND PRELOAD' ), //! how work it?
-		filterSerializedResponseHeaders: () => console.log( 'filterSerializedResponseHeaders' ) //! how work it?
 	} );
 }
 export const handle = sequence( first, second );
@@ -53,7 +53,7 @@ export const handle = sequence( first, second );
 // 	return await fetch(request)
 // }
 
-export async function handleError ( { error } ) {
+export async function handleError ( { error } ) { //! It is for unexpected errors!
 	console.error(error.stack, 'error.stack'); //! will not be in the console for security reasons
 	return {
 		message: 'Unexpected ERROR - message from the handlerError hook in the hook.server.js',

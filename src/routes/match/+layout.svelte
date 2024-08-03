@@ -4,7 +4,7 @@
 
 <nav>
 	<ul>
-		{#each colors as color}
+		{#each colors as color, index (index)}
 			<li><a href="/match/{color}" style="--color: #{color}">#{color}</a></li>
 		{/each}
 	</ul>

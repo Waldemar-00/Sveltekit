@@ -2,12 +2,13 @@
 	// @ts-nocheck
 
 	import { page } from '$app/stores';
+	// console.log($page);
 </script>
 
 <h1>Outer error layout!</h1>
 <h2>{$page.status}</h2>
 <h2>{$page.error.message}</h2>
-{#if $page.status === 404}
+{#if $page.url.pathname.startsWith('/match')}
 	<h2>{$page.url.pathname} it is invalid path</h2>
 {/if}
 
