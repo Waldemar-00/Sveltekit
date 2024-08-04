@@ -1,6 +1,14 @@
-export async function load ({parent})
+// export async function load ({parent})
+// {
+//   // console.log(parent());
+//   const { a } = await parent();
+//   return { b: a + 1}
+// }
+
+export async function load ()
 {
-  console.log(parent());
-  const { a } = await parent();
-  return { b: a + 1}
+  // return {
+  //   a: 13,
+  //   b: 7
+  // }
 }
