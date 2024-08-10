@@ -7,6 +7,7 @@
 			body: JSON.stringify(name)
 		});
 		const response = await req.json();
+		console.log(response);
 		name = response;
 	}
 </script>
@@ -29,8 +30,27 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		gap: 1.7rem;
 	}
 	h2 {
 		text-align: center;
+	}
+	input {
+		padding: 0.5rem 2rem;
+		text-align: center;
+		border-radius: 1rem;
+		border: none;
+		outline-color: #f5d2a0;
+	}
+	button {
+		padding: 0.5rem 2rem;
+		border-radius: 1rem;
+		text-align: center;
+		background-color: #fff;
+		border: none;
+		cursor: pointer;
+	}
+	button:active {
+		border: 2px solid green;
 	}
 </style>

@@ -58,7 +58,7 @@
 {#if $page.state.showModal}
 	<dialog>
 		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-		<form method="POST" on:keydown={catchKeydown}>
+		<form method="POST" on:keydown|preventDefault={catchKeydown}>
 			<button
 				class="close"
 				on:click={async () => {

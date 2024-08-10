@@ -1,12 +1,15 @@
 // @ts-nocheck
 import { fail } from '@sveltejs/kit';
 //! return object data (also in the page store or export let data)
-// export function load ( { cookies } )
+// export function load ( )
 // {
-//   const email = cookies.get( 'email');
-//   if ( email ) return {email}
+//   const res = Promise.reject();
+//   res.catch( () => console.log( "CATCH!!!" ) );
+//   return {
+//     res
+//   }
 // }
-
+export const prerender = false;
 //! return object form (also in the page store or export let form)
 export const actions = {
   default: async ({cookies, request}) =>
