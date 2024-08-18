@@ -15,20 +15,28 @@
 
 <form
 	method="POST"
-	use:enhance={({ formElement, formData, action, submitter, cancel }) => {
+	use:enhance={({ formElement, formData, action, submitter, cancel, data, form }) => {
 		// console.log(formElement, 'FORMELEMENT');
 		// console.log(action, 'ACTION');
 		// console.log(submitter, 'SUBMITTER');
 		// console.log(cancel, 'CANCEL');
 		// console.log(formData, 'FORMDATA');
+		// console.log(data, 'data');
+		// console.log(form, 'form');
+
 		formData.set('comment', `${formData.get('comment')} ENHANCE`);
 		return async ({ result, update }) => {
 			// result.type = 'error';
-			// console.log(result.type, result.status, result.data, result);
+			// console.log(result.status, 'status');
+			// console.log(result.type, 'type');
+			// console.log(result.data, 'data');
+			// console.log(result, 'object result');
+			// console.log(result.location);
+
 			// update();
 			// if (result.type === 'success') invalidateAll();
 			if (result.type === 'success') update();
-			applyAction(result);
+			await applyAction(result);
 			// update();
 		};
 	}}
