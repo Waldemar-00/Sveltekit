@@ -17,7 +17,7 @@
 	method="POST"
 	use:enhance={({ formElement, formData, action, submitter, cancel, data, form }) => {
 		// console.log(formElement, 'FORMELEMENT');
-		// console.log(action, 'ACTION');
+		console.log(action, 'ACTION');
 		// console.log(submitter, 'SUBMITTER');
 		// console.log(cancel, 'CANCEL');
 		// console.log(formData, 'FORMDATA');

@@ -5,10 +5,10 @@
 	export let form;
 	// console.log(form?.comment);
 
-	async function submitComment(e) {
-		const formData = new FormData(e.currentTarget);
+	async function submitComment() {
+		const formData = new FormData(this);
 
-		const response = await fetch(e.currentTarget.action, {
+		const response = await fetch(this.action, {
 			method: 'POST',
 			body: formData
 		});
