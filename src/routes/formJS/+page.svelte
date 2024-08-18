@@ -5,12 +5,15 @@
 	export let form;
 	// console.log(form?.comment);
 
-	async function submitComment() {
+	async function submitComment(e) {
 		const formData = new FormData(this);
 
 		const response = await fetch(this.action, {
 			method: 'POST',
-			body: formData
+			body: formData,
+			headers: {
+				'x-sveltekit-action': true //! if you have server.js
+			}
 		});
 
 		const result = deserialize(await response.text());

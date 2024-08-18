@@ -3,6 +3,7 @@
 // {
 
 // }
+export const prerender = false;
 export const actions = {
   default: async ({ request, cookies }) =>
   {
